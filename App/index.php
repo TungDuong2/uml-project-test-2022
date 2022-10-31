@@ -18,8 +18,11 @@
 
 </head>
 <body style='margin: 50px;'>
-    <h1>Programmer Demonstration Project, UM Libraries</h1>
+    <img src="css/UML_logo.jpg" style="position: absolute; top: 8px; left: 40px;
+    height: auto; width: auto; max-width: 200px; max-height: 200px;">
+    <h1 class="text-center">Programmer Demonstration Project - UM Libraries</h1>
     
+    <hr>
     <div class="row">
         <div class="col-sm-6" id="searchByDepartment">
             <h3>Hierarchical Staff List Organized By Department</h3>
@@ -27,7 +30,7 @@
             <form  method="POST">
                 <label>Department Options:</label>
                 
-                <select style='width:300px' name="department_options" id="department_options" >
+                <select  style="width:320px" name="department_options" id="department_options" >
                 <!-- onchange="this.form.submit()"; -->
                     <option selected="selected" style='text-align: center' value=0>--- Select a Department ---</option>
                     <?php 

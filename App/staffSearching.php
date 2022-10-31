@@ -28,7 +28,7 @@ if(isset($_POST['search'])) {
 
                 echo "
                 <div class='col-sm-4'>
-                    <div class='card'>
+                    <div class='card' style='font-size:80%;'>
                         <img class='card-img-top' src='css/Unknown_person.jpg' alt='Card image cap'>
                         <div class='card-body'>
                             <h5 class='card-title'><b>$first_name $last_name</b></h5>

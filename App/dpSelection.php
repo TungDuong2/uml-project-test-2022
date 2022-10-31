@@ -28,9 +28,9 @@ if(isset($_POST['department_option_selected'])) {
         
         echo "
             <ul id='myUL'>
-                <li><span class='caret fs-5'>University of Miami Libraries</span>   
+                <li><span class='caret fs-3'>University of Miami Libraries</span>   
                     <ul class='nested'>
-                        <li><span class='caret fs-5'>Departments</span>   
+                        <li><span class='caret fs-4'>Departments</span>   
                             <ul class='nested'>
         ";
         foreach ($departments as $dp) {
@@ -60,14 +60,14 @@ if(isset($_POST['department_option_selected'])) {
                     $email = $st['email'];
                     echo "<li><small><b>$last_name, $first_name</b> | <i>$title</i> | <a href='mailto:$email'>$email</a></small></li>";
                 }       
-                // echo 
-                // "<div>
-                //     var nested = document.getElementsByClassName('nested');
-                //     nested.styte.display = 'block';    
-                //     var active = document.getElementsByClassName('active');
-                //     active.styte.display = 'none';
-                // </div>";         
-                
+                echo 
+                "<script>
+                  var toggler = document.getElementsByClassName('caret');
+                  for (var i = 2; i < toggler.length; i++) {
+                    toggler[i].parentElement.querySelector('.nested').classList.toggle('active');
+                    toggler[i].classList.toggle('caret-down');
+                  }
+                </script>";                     
             }
 
 
@@ -113,6 +113,10 @@ for (i = 0; i < toggler.length; i++) {
     this.classList.toggle("caret-down");
   });
 }
+for (i = 0; i < 2; i++) {
+  toggler[i].parentElement.querySelector(".nested").classList.toggle("active");
+  toggler[i].classList.toggle("caret-down");
+}
 </script>
 <style>
 ul, #myUL {
@@ -146,12 +150,12 @@ ul, #myUL {
 }
 
 .nested {
-  /* display: none; */
-  display: block;
+  display: none;
+  /* display: block; */
 }
 
 .active {
-  /* display: block; */
-  display: none;
+  display: block;
+  /* display: none; */
 }
 </style>
