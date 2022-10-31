@@ -5,10 +5,14 @@ services:
     command: "--sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' --default_authentication_plugin=mysql_native_password --character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
-      MYSQL_DATABASE: "$MYSQL_DATABASE"
-      MYSQL_USER: "$MYSQL_USER"
-      MYSQL_PASSWORD: "$MYSQL_PASSWORD"
+      # MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
+      # MYSQL_DATABASE: "$MYSQL_DATABASE"
+      # MYSQL_USER: "$MYSQL_USER"
+      # MYSQL_PASSWORD: "$MYSQL_PASSWORD"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
     ports:
       - '3306:3306'
     networks:
