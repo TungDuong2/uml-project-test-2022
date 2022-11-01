@@ -12,7 +12,7 @@ $db = $database->getConnection();
 $departments = new Departments($db);
 
 $departments->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
-// $json_request = (isset($_GET['json']) && $_GET['json']) ? $_GET['json'] : '0';
+$json_pretty = (isset($_GET['json']) && $_GET['json']) ? $_GET['json'] : '0';
 
 $result = $departments->get();
 if($result->num_rows > 0){    
@@ -27,8 +27,12 @@ if($result->num_rows > 0){
         ); 
        array_push($departmentRecords["departments"], $departmentDetails);
     }    
-    http_response_code(200);     
-    echo json_encode($departmentRecords, JSON_PRETTY_PRINT);
+    http_response_code(200);        
+    if ($json_pretty == 0) {
+        echo json_encode($departmentRecords);
+    } else {
+        echo json_encode($departmentRecords, JSON_PRETTY_PRINT);
+    }
 }else{     
     http_response_code(404);     
     echo json_encode(

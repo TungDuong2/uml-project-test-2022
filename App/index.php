@@ -13,12 +13,17 @@
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css">     -->
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <style>
+        body {
+            /* background-image: linear-gradient(to right, white, lightgray); */
+            background: lightgray url('css/bg.jpg') fixed no-repeat top;           
+        }
+    </style>
     
 
 </head>
 <body style='margin: 50px;'>
-    <img src="css/UML_logo.jpg" style="position: absolute; top: 8px; left: 40px;
+    <img src="css/UML_logo-removebg.png" style="position: absolute; top: 8px; left: 40px;
     height: auto; width: auto; max-width: 200px; max-height: 200px;">
     <h1 class="text-center">Programmer Demonstration Project - UM Libraries</h1>
     
